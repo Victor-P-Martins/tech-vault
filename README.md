@@ -1,4 +1,4 @@
-# tech-vault
+# Tech-vault
 This repository serves as a personal knowledge base, housing notes, resources, and insights gathered during my journey through the ever-evolving world of technology. From cloud computing and AWS certifications to coding practices, DevOps, and theoretical concepts, Tech Vault is a collection of everything I’ve explored and learned.
 
 Whether it’s:
