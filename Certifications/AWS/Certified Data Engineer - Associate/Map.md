@@ -1,13 +1,12 @@
 
----
 # Domains
+
 - Domain 1 -> Data ingestion and Transformation (34% of scored content)
 - Domain 2 -> Data Store Management (26% of scored content)
 - Domain 3 -> Data Operations and Support (22% of scored content)
 - Domain 4 -> Data Security and Governance (18% of scored content)
 
 ---
-
 
 # AWS Services
 
@@ -45,12 +44,14 @@
 ### Amazon AppFlow
 
 ### Amazon EventBridge
+
 ### Amazon Managed Workflows for Apache Airflow (Amazon MWAA)
 
 ### Amazon Simple Notification Service (Amazon SNS)
-### Amazon Simple Queue Service (Amazon SQS)
-### AWS Step Functions
 
+### Amazon Simple Queue Service (Amazon SQS)
+
+### AWS Step Functions
 
 ## Cloud Financial Management
 
@@ -59,7 +60,6 @@
 ### AWS Budgets
 
 ### AWS Cost Explorer
-
 
 ## Compute
 
@@ -73,7 +73,6 @@
 
 ### Aws Serverless Application Repository (AWS SAM)
 
-
 ## Containers
 
 ---
@@ -83,7 +82,6 @@
 ### Amazon Elastic Container Service (Amazon ECS)
 
 ### Amazon Elastic Kubernetes Service (Amazon EKS)
-
 
 ## Database
 
@@ -123,20 +121,17 @@
 
 ### Aws CodePipeline
 
-
 ## Frontend Web and Mobile
 
 ---
 
 ### Amazon API Gateway
 
-
 ## Machine Learning
 
 ---
 
 ### Amazon SageMaker
-
 
 ## Management and Governance
 
@@ -156,7 +151,6 @@
 
 ### Aws Well-Architected Tool
 
-
 ## Migration And Transfer
 
 ---
@@ -175,7 +169,6 @@
 
 ### AWS Transfer Family
 
-
 ## Networking And Content Delivery
 
 ---
@@ -187,7 +180,6 @@
 ### Amazon Route 53
 
 ### Amazon Virtual Private Cloud (Amazon VPC)
-
 
 ## Security, Identity and Compliance
 
@@ -204,7 +196,6 @@
 ### AWS Shield
 
 ### AWS WAF
-
 
 ## Storage
 

@@ -1,0 +1,7 @@
+{
+    "markdown.validate.ignoredLinks": [
+        "/AWS%20Certified%20Developer%20-%20Associate/Amazon%20Athena.md",
+        "/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md",
+        "/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md"
+    ]
+}
