@@ -17,9 +17,9 @@
 
 ### [Amazon Athena](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20Athena.md)
 
-### Amazon EMR
+### [Amazon EMR](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md)
 
-### AWS Glue
+### [AWS Glue](/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md)
 
 ### AWS Glue DataBrew
 
