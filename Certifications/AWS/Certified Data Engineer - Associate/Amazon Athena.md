@@ -16,7 +16,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
   - Snappy, Zlib, Gzip compression
   - Unstructured, semi-structured or structured
 
-# Examples
+## Examples
 
 - Ad-hoc queries of web logs
 - Querying staging data before loading to Redshift
@@ -25,7 +25,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
 - Integration with QuickSight
 - Integration via ODBC / JDBC with other visualization tools
 
-# Athena Workgroups
+## Athena Workgroups
 
 - Can organize users / teams / apps / workloads into Workgroups
 - Can control query access and track costs by WorkGroup
@@ -36,7 +36,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
   - IAM policies
   - Encryption settings
 
-# Cost Model
+## Cost Model
 
 - Pay-as-you-go
   - $5 per TB scanned
@@ -47,7 +47,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
   - Save 30-90%, and get better performance
 - Glue and S3 have their own charges
 
-# Security
+## Security
 
 - Access control
   - IAM, ACLs, S3 bucket policies
@@ -59,21 +59,21 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
 - Cross-account access in S3 bucket policy possible
 - Transport Layer Security (TLS) encrypts in-transit (between Athena and S3)
 
-# Anti-Patterns
+## Anti-Patterns
 
 - Highly formatted reports / visualization
   - That's what Amazon QuickSight is for
 - ETL
   - Use Glue instead
 
-# Optimizing Performance
+## Optimizing Performance
 
 - Use columnar data (ORC, Parquet)
 - Small number of large files performs better than large number of small files
 - Use partitions
   - If adding partitions after the fact, use MSCK REPAIR TABLE command
 
-# ACID transactions
+## ACID transactions
 
 - Powered by Apache Iceberg
   - Just add 'table_type' = 'ICEBERG' in your CREATE TABLE command
@@ -85,7 +85,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
 - Remember governed tables in Lake Formation? This is another way of getting ACID features in Athena
 - Benefits from periodic compaction to preserve performance
 
-# Fine-Grained Access to AWS Glue Data Catalog
+## Fine-Grained Access to AWS Glue Data Catalog
 
 - IAM-based Database and table-level security
   - Broader than data filters in Lake Formation
@@ -100,7 +100,7 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
 - Just need to map these operations to their IAM actions
 - Example: DROP TABLE
 
-# Athena for Apache Spark
+## Athena for Apache Spark
 
 - Can run Jupyter notebooks with Spark within Athena console
   - Notebooks may be encrypted automatically or with KMS
@@ -112,6 +112,6 @@ Amazon Athena is a serverless, interactive query service by AWS that allows you 
 - Can adjust DPU's for coordinator and executor sizes
 - Pricing based on compute usage and DPU per hour
 
-# User Defined Function
+## User Defined Function
 
 Amazon Athena now supports User Defined Functions (UDFs), allowing customers to write custom scalar functions and invoke them in SQL queries. UDFs in Athena are defined within an AWS Lambda function as methods in a Java deployment package. This feature is particularly useful for scenarios requiring custom processing, such as categorizing earthquake locations using a geospacial indexing system. UDFs enable the encapsulation of complex logic into reusable functions, thus simplifying SQL queries in Athena.
