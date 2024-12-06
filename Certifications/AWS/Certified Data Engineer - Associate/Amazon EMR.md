@@ -50,7 +50,7 @@ Amazon EMR (Elastic MapReduce) is a cloud-based big data platform that simplifie
   - Ephemeral - HDFS data is lost when cluster is terminated!
   - But, useful for caching intermediate results or workloads with significant random I/O
 - EMRFS: Access S3 as if it were HDFS
-  - Allows persistent storage after cluster terminantion
+  - Allows persistent storage after cluster termination
   - EMRFS Consistent View - Optional for S3 consistency
     - Uses DynamoDB to track consistency
     - May need to tinker with read/write capacity on DynamoDB
