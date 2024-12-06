@@ -22,7 +22,7 @@
 
 ### AWS Glue DataBrew
 
-### AWS Lake Formation
+### [AWS Lake Formation](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/AWS%20Lake%20Formation.md)
 
 ### Amazon Kinesis Data Firehose
 
