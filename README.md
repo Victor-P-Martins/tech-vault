@@ -21,4 +21,4 @@ Feel free to explore and use it as inspiration for your own tech journey! 🚀
 
 
 
-[awsCertifiedDataEngineerAssociate]: /Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/
+[awsCertifiedDataEngineerAssociate]: /Certifications/AWS/Certified-Data-Engineer-Associate

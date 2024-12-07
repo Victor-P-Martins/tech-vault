@@ -14,17 +14,17 @@
 
 ---
 
-### [Amazon Athena](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20Athena.md)
+### [Amazon Athena](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Athena.md)
 
 ### [Amazon EMR](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md)
 
 ### [AWS Glue](/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md)
 
-### [AWS Glue DataBrew](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/AWS%20Glue%20Databrew)
+### [AWS Glue DataBrew](</Certifications/AWS/Certified-Data-Engineer-Associate/AWS Glue Databrew>)
 
-### [AWS Lake Formation](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/AWS%20Lake%20Formation.md)
+### [AWS Lake Formation](</Certifications/AWS/Certified-Data-Engineer-Associate/AWS Lake Formation.md>)
 
-### [Amazon Kinesis Data Firehose](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/Amazon%20Kinesis%20Data%20Firehose.md)
+### [Amazon Kinesis Data Firehose](</Certifications/AWS/Certified-Data-Engineer-Associate/Amazon Kinesis Data Firehose.md>)
 
 ### Amazon Kinesis Data Streams
 
