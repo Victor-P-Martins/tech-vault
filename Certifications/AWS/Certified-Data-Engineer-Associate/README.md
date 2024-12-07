@@ -24,7 +24,7 @@
 
 ### [Amazon Kinesis Data Firehose](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Kinesis-Data-Firehose.md)
 
-### Amazon Kinesis Data Streams
+### [Amazon Kinesis Data Streams](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Kinesis-Data-Streams.md)
 
 ### Amazon Managed Service for Apache Flink
 
