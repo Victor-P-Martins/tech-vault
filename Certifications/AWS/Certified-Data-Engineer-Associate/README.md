@@ -34,10 +34,9 @@
 
 ### Amazon QuickSight
 
+---
 
 ## App Integration
-
----
 
 ### Amazon AppFlow
 
@@ -51,17 +50,17 @@
 
 ### AWS Step Functions
 
-## Cloud Financial Management
-
 ---
+
+## Cloud Financial Management
 
 ### AWS Budgets
 
 ### AWS Cost Explorer
 
-## Compute
-
 ---
+
+## Compute
 
 ### Aws Batch
 
@@ -71,9 +70,9 @@
 
 ### Aws Serverless Application Repository (AWS SAM)
 
-## Containers
-
 ---
+
+## Containers
 
 ### Amazon Elastic Container Registry (Amazon ECR)
 
@@ -81,9 +80,9 @@
 
 ### Amazon Elastic Kubernetes Service (Amazon EKS)
 
-## Database
-
 ---
+
+## Database
 
 ### Amazon DocumentDB (with MongoDB Compatibility)
 
@@ -101,9 +100,9 @@
 
 ### Amazon Timestream
 
-## Developer Tools
-
 ---
+
+## Developer Tools
 
 ### Aws Command Line Interface (AWS CLI)
 
@@ -119,21 +118,21 @@
 
 ### Aws CodePipeline
 
-## Frontend Web and Mobile
-
 ---
+
+## Frontend Web and Mobile
 
 ### Amazon API Gateway
 
-## Machine Learning
-
 ---
+
+## Machine Learning
 
 ### Amazon SageMaker
 
-## Management and Governance
-
 ---
+
+## Management and Governance
 
 ### Aws CloudFormation
 
@@ -149,9 +148,9 @@
 
 ### Aws Well-Architected Tool
 
-## Migration And Transfer
-
 ---
+
+## Migration And Transfer
 
 ### AWS Application Discovery Service
 
@@ -167,9 +166,9 @@
 
 ### AWS Transfer Family
 
-## Networking And Content Delivery
-
 ---
+
+## Networking And Content Delivery
 
 ### Amazon CloudFront
 
@@ -179,9 +178,9 @@
 
 ### Amazon Virtual Private Cloud (Amazon VPC)
 
-## Security, Identity and Compliance
-
 ---
+
+## Security, Identity and Compliance
 
 ### AWS Identity and Access Management (IAM)
 
@@ -195,9 +194,10 @@
 
 ### AWS WAF
 
+---
+
 ## Storage
 
----
 
 ### AWS Backup
 
@@ -206,3 +206,5 @@
 ### Amazon Elastic File System (Amazon EFS)
 
 ### Amazon Simple Storage Service (Amazon S3)
+
+---

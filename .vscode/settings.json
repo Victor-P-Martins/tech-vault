@@ -5,6 +5,10 @@
         "/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md"
     ],
     "cSpell.words": [
-        "Databrew"
+        "Appenders",
+        "checkpointing",
+        "Databrew",
+        "Getrecords",
+        "resharding"
     ]
 }
