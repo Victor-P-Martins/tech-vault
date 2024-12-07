@@ -20,11 +20,11 @@
 
 ### [AWS Glue](/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md)
 
-### AWS Glue DataBrew
+### [AWS Glue DataBrew](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/AWS%20Glue%20Databrew)
 
 ### [AWS Lake Formation](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/AWS%20Lake%20Formation.md)
 
-### Amazon Kinesis Data Firehose
+### [Amazon Kinesis Data Firehose](/Certifications/AWS/Certified%20Data%20Engineer%20-%20Associate/Amazon%20Kinesis%20Data%20Firehose.md)
 
 ### Amazon Kinesis Data Streams
 
