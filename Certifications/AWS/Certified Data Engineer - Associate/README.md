@@ -14,7 +14,7 @@
 
 ---
 
-### [Amazon Athena](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20Athena.md)
+### [Amazon Athena](/AWS/Certified Data Engineer - Associate/Amazon Athena.md)
 
 ### [Amazon EMR](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md)
 
