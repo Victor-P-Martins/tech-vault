@@ -12,27 +12,17 @@
 
 ## Analytics
 
----
-
-<<<<<<< HEAD:Certifications/AWS/Certified-Data-Engineer-Associate/README.md
-<<<<<<< HEAD:Certifications/AWS/Certified-Data-Engineer-Associate/README.md
 ### [Amazon Athena](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Athena.md)
-=======
-### [Amazon Athena](/AWS/Certified20%Data20%Engineer20%-20%Associate/Amazon20%Athena.md)
->>>>>>> a16c4b1 (Update README.md):Certifications/AWS/Certified Data Engineer - Associate/README.md
-=======
-### [Amazon Athena](/AWS/Certified20%Data20%Engineer20%-20%Associate/Amazon20%Athena.md)
->>>>>>> a16c4b1a71c9c1e7c0d953acf80a37049465081c:Certifications/AWS/Certified Data Engineer - Associate/README.md
 
-### [Amazon EMR](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md)
+### [Amazon EMR](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-EMR.md)
 
-### [AWS Glue](/AWS%20Certified%20Developer%20-%20Associate/AWS%20Glue.md)
+### [AWS Glue](/Certifications/AWS/Certified-Data-Engineer-Associate/AWS-Glue.md)
 
-### [AWS Glue DataBrew](</Certifications/AWS/Certified-Data-Engineer-Associate/AWS Glue Databrew>)
+### [AWS Glue DataBrew](/Certifications/AWS/Certified-Data-Engineer-Associate/AWS-Glue-Databrew)
 
-### [AWS Lake Formation](</Certifications/AWS/Certified-Data-Engineer-Associate/AWS Lake Formation.md>)
+### [AWS Lake Formation](/Certifications/AWS/Certified-Data-Engineer-Associate/AWS-Lake-Formation.md)
 
-### [Amazon Kinesis Data Firehose](</Certifications/AWS/Certified-Data-Engineer-Associate/Amazon Kinesis Data Firehose.md>)
+### [Amazon Kinesis Data Firehose](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Kinesis-Data-Firehose.md)
 
 ### Amazon Kinesis Data Streams
 

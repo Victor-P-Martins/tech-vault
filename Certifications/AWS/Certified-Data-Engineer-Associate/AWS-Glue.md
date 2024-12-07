@@ -75,7 +75,7 @@ Amazon Glue is a serverless data integration service that helps prepare, clean, 
   - DropFields, DropNullFields - remove (null) fields
   - Filter - Specify a function to filter records
   - Join - to enrich data
-  - Map - Add fields, delete fields, perform extrernal lookups
+  - Map - Add fields, delete fields, perform external lookups
 - Machine Learning Transformations:
   - FindMatches ML: identify duplicate or matching records in your dataset, even when the records do not have a common unique identifier and no fields match exactly
 - Format conversions: CSV, JSON, Avro, Parquet, ORC, XML
