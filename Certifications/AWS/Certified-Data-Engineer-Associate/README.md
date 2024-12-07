@@ -15,10 +15,14 @@
 ---
 
 <<<<<<< HEAD:Certifications/AWS/Certified-Data-Engineer-Associate/README.md
+<<<<<<< HEAD:Certifications/AWS/Certified-Data-Engineer-Associate/README.md
 ### [Amazon Athena](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Athena.md)
 =======
 ### [Amazon Athena](/AWS/Certified20%Data20%Engineer20%-20%Associate/Amazon20%Athena.md)
 >>>>>>> a16c4b1 (Update README.md):Certifications/AWS/Certified Data Engineer - Associate/README.md
+=======
+### [Amazon Athena](/AWS/Certified20%Data20%Engineer20%-20%Associate/Amazon20%Athena.md)
+>>>>>>> a16c4b1a71c9c1e7c0d953acf80a37049465081c:Certifications/AWS/Certified Data Engineer - Associate/README.md
 
 ### [Amazon EMR](/AWS%20Certified%20Developer%20-%20Associate/Amazon%20EMR.md)
 
