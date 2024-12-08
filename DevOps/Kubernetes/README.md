@@ -13,3 +13,7 @@ Kubernetes é uma plataforma open-source projetada para automatizar a implantaç
 
 - [Containers](/DevOps/Kubernetes/Containers.md)
 - [Kubernetes](/DevOps/Kubernetes/Kubernetes.md)
+
+## Primeiros Passos
+
+- [Instalando o Kubectl](/DevOps/Kubernetes/instalando_kubectl.md)

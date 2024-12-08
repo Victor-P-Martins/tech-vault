@@ -25,6 +25,8 @@ Alguns exemplos são:
 - **k3s**: Desenvolvido pela Rancher Labs, é um concorrente direto do MicroK8s, podendo ser executado inclusive em Raspberry Pi;
 
 - **k0s**: Desenvolvido pela Mirantis, mesma empresa que adquiriu a parte enterprise do Docker. É uma distribuição do Kubernetes com todos os recursos necessários para funcionar em um único binário, que proporciona uma simplicidade na instalação e manutenção do cluster. A pronúncia é correta é kay-zero-ess e tem por objetivo reduzir o esforço técnico e desgaste na instalação de um cluster Kubernetes, por isso o seu nome faz alusão a Zero Friction. O k0s pode ser utilizado em ambientes de produção;
+  
+- **Kubectl**: A ferramenta de linha de comando do Kubernetes, kubectl, permite que você execute comandos nos clusters Kubernetes. Você pode usar o kubectl para instalar aplicações, inspecionar e gerenciar recursos de cluster e visualizar os logs.
 
 ### Componentes do Control Plane
 
@@ -63,7 +65,8 @@ WORKERS
 | TCP      | Inboud    | 10250       | Kubelet API | Self, Control Plane |
 | TCP      | Inboud    | 30000-32767 | NodePort    | Services All        |
 
-Conceitos-chave do k8s
+### Conceitos-chave do k8s
+
 É importante saber que a forma como o k8s gerencia os contêineres é ligeiramente diferente de outros orquestradores, como o Docker Swarm, sobretudo devido ao fato de que ele não trata os contêineres diretamente, mas sim através de pods. Vamos conhecer alguns dos principais conceitos que envolvem o k8s a seguir:
 
 - **Pod**: É o menor objeto do k8s. Como dito anteriormente, o k8s não trabalha com os contêineres diretamente, mas organiza-os dentro de pods, que são abstrações que dividem os mesmos recursos, como endereços, volumes, ciclos de CPU e memória. Um pod pode possuir vários contêineres;
