@@ -28,7 +28,7 @@
 
 ### [Amazon Managed Service for Apache Flink](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Managed-Service-Apache-Flink)
 
-### Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+### [Amazon Managed Streaming for Apache Kafka (Amazon MSK)](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Managed-Streaming-Apache-Kafka-MSK.md)
 
 ### Amazon OpenSearch Service
 
