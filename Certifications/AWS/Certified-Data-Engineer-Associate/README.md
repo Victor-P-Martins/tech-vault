@@ -26,7 +26,7 @@
 
 ### [Amazon Kinesis Data Streams](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Kinesis-Data-Streams.md)
 
-### Amazon Managed Service for Apache Flink
+### [Amazon Managed Service for Apache Flink](/Certifications/AWS/Certified-Data-Engineer-Associate/Amazon-Managed-Service-Apache-Flink)
 
 ### Amazon Managed Streaming for Apache Kafka (Amazon MSK)
 
