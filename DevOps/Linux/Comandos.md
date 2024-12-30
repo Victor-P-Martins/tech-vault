@@ -158,7 +158,7 @@
     ls -lhS
     ```
 
-- **Exibe o conteúdo de um arquivo**
+- **Exibe o conteúdo de um arquivo ou processo**
 
     ```bash
     cat <file_name>
