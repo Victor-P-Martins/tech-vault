@@ -12,13 +12,17 @@ Tech Vault is the perfect place to organize, share, and revisit these valuable l
 Feel free to explore and use it as inspiration for your own tech journey! 🚀
 
 ## Certifications
+
 ### AWS
+
 - [AWS Certified Data Engineer - Associate][awsCertifiedDataEngineerAssociate]
 
+### Devops / Infrastructure
 
-
-
-
+- [Kubernetes][devopsInfraKubernetes]
+- [Linux][devopsInfraLinux]
 
 
 [awsCertifiedDataEngineerAssociate]: /Certifications/AWS/Certified-Data-Engineer-Associate
+[devopsInfraKubernetes]: /DevOps/Kubernetes/
+[devopsInfraLinux]: /DevOps/Linux/

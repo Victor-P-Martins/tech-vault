@@ -5,7 +5,7 @@
 
 ```yml
 # Definições do deployment
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
