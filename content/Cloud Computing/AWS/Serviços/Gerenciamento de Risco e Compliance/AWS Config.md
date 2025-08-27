@@ -10,11 +10,11 @@ Um serviço totalmente gerenciado que fornece a você um inventário de recursos
 
 - Fornece **regras pré-construídas** para avaliar as configurações dos seus recursos AWS e mudanças de configuração, ou criar suas próprias **regras customizadas** em AWS Lambda que definem suas melhores práticas e diretrizes internas para configuração de recursos.
 
-- O Config registra detalhes de alterações nos seus recursos AWS para fornecer um histórico de configuração e os entrega automaticamente em um bucket S3 que você especificar.
+- O Config registra detalhes de alterações nos seus recursos AWS para fornecer um histórico de configuração e os entrega automaticamente em um bucket [[S3 (Amazon Simple Storage Service)]] que você especificar.
 
 - Receba uma **notificação** sempre que um recurso for criado, modificado ou deletado.
 
-- O Config permite gravar mudanças de configuração de software dentro das suas instâncias EC2 e servidores on-premises, bem como servidores e Máquinas Virtuais em ambientes de outros provedores de nuvem. Você ganha visibilidade em:
+- O Config permite gravar mudanças de configuração de software dentro das suas instâncias [[Elastic Compute Cloud (EC2)]] e servidores on-premises, bem como servidores e Máquinas Virtuais em ambientes de outros provedores de nuvem. Você ganha visibilidade em:
     - Configurações do sistema operacional
     - Atualizações de sistema
     - Aplicativos instalados
@@ -84,7 +84,7 @@ Um serviço totalmente gerenciado que fornece a você um inventário de recursos
 	Representa suas configurações desejadas para recursos AWS específicos ou para uma conta inteira.
     
     - Fornece regras pré-definidas e customizáveis.
-    - Se um recurso violar uma regra, o Config marca o recurso e a regra como **não conformes** (_noncompliant_) e notifica você via Amazon SNS.
+    - Se um recurso violar uma regra, o Config marca o recurso e a regra como **não conformes** (_noncompliant_) e notifica você via [[Amazon SNS]].
     - Avalia seus recursos em resposta a mudanças de configuração ou periodicamente.
 
 - **Conformance Packs**
@@ -111,7 +111,7 @@ Um serviço totalmente gerenciado que fornece a você um inventário de recursos
 
 ### Monitoramento do AWS Config
 
-- Use **Amazon SNS** para enviar notificações sempre que um recurso suportado for criado, atualizado ou modificado como resultado de atividade de API do usuário.
+- Use **[[Amazon SNS]]** para enviar notificações sempre que um recurso suportado for criado, atualizado ou modificado como resultado de atividade de API do usuário.
 - Use **Amazon CloudWatch Events (EventBridge)** para detectar e reagir a mudanças no status de eventos do AWS Config.
 - Use **AWS CloudTrail** para capturar chamadas de API para o Config.
 
