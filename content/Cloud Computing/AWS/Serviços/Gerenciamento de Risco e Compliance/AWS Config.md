@@ -1,4 +1,5 @@
 # O que é AWS Config?
+#Compliance  #Risk
 
 Um serviço totalmente gerenciado que fornece a você um inventário de recursos AWS, histórico de configurações e notificações de alterações de configuração para habilitar segurança e governança.
 

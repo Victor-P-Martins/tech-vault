@@ -595,7 +595,69 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     document.removeEventListener("themechange", handleThemeChange)
   })
 
+  // Move graph modal to body immediately to escape sidebar stacking context
   const containers = [...document.getElementsByClassName("global-graph-outer")] as HTMLElement[]
+  console.log("Found graph containers:", containers.length)
+
+  containers.forEach((container, index) => {
+    console.log(`Processing container ${index}`)
+    if (container.parentElement !== document.body) {
+      console.log(`Moving container ${index} to body`)
+      document.body.appendChild(container)
+    }
+
+    // Force correct styles on OUTER container (backdrop)
+    container.style.position = "fixed"
+    container.style.top = "0"
+    container.style.left = "0"
+    container.style.right = "0"
+    container.style.bottom = "0"
+    container.style.width = "100vw"
+    container.style.height = "100vh"
+    container.style.margin = "0"
+    container.style.padding = "0"
+    container.style.zIndex = "99999"
+    container.style.background = "rgba(0, 0, 0, 0.5)"
+    container.style.backdropFilter = "blur(16px)"
+    container.style.pointerEvents = "all"
+    container.style.overflow = "hidden"
+    container.style.display = "none"
+
+    // Force correct styles on INNER container (white box with graph)
+    const innerContainer = container.querySelector(".global-graph-container") as HTMLElement
+    if (innerContainer) {
+      innerContainer.style.position = "fixed"
+      innerContainer.style.top = "50%"
+      innerContainer.style.left = "50%"
+      innerContainer.style.transform = "translate(-50%, -50%)"
+      innerContainer.style.width = "90vw"
+      innerContainer.style.maxWidth = "1400px"
+      innerContainer.style.height = "85vh"
+      innerContainer.style.maxHeight = "900px"
+      innerContainer.style.background = "var(--light)"
+      innerContainer.style.borderRadius = "20px"
+      innerContainer.style.boxShadow = "0 30px 90px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.2)"
+      innerContainer.style.overflow = "hidden"
+      innerContainer.style.zIndex = "1"
+      console.log(`Applied inline styles to inner container ${index}`)
+    }
+
+    console.log(`Applied inline styles to outer container ${index}`)
+
+    // Ensure container shows when active
+    const observer = new MutationObserver(() => {
+      if (container.classList.contains("active")) {
+        console.log(`Container ${index} is now active - showing`)
+        container.style.display = "block"
+      } else {
+        console.log(`Container ${index} is not active - hiding`)
+        container.style.display = "none"
+      }
+    })
+    observer.observe(container, { attributes: true, attributeFilter: ["class"] })
+    window.addCleanup(() => observer.disconnect())
+  })
+
   async function renderGlobalGraph() {
     const slug = getFullSlug(window)
     for (const container of containers) {
@@ -635,9 +697,18 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   }
 
   const containerIcons = document.getElementsByClassName("global-graph-icon")
-  Array.from(containerIcons).forEach((icon) => {
-    icon.addEventListener("click", renderGlobalGraph)
-    window.addCleanup(() => icon.removeEventListener("click", renderGlobalGraph))
+  console.log("Setting up graph icon click handlers. Icons found:", containerIcons.length)
+
+  Array.from(containerIcons).forEach((icon, index) => {
+    console.log(`Setting up click handler for icon ${index}`)
+    const clickHandler = (e: Event) => {
+      e.preventDefault()
+      e.stopPropagation()
+      console.log("Graph icon clicked! Rendering global graph...")
+      renderGlobalGraph()
+    }
+    icon.addEventListener("click", clickHandler)
+    window.addCleanup(() => icon.removeEventListener("click", clickHandler))
   })
 
   document.addEventListener("keydown", shortcutHandler)

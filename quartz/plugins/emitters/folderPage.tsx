@@ -66,16 +66,20 @@ function computeFolderInfo(
 ): Record<SimpleSlug, ProcessedContent> {
   // Create default folder descriptions
   const folderInfo: Record<SimpleSlug, ProcessedContent> = Object.fromEntries(
-    [...folders].map((folder) => [
-      folder,
-      defaultProcessedContent({
-        slug: joinSegments(folder, "index") as FullSlug,
-        frontmatter: {
-          title: `${i18n(locale).pages.folderContent.folder}: ${folder}`,
-          tags: [],
-        },
-      }),
-    ]),
+    [...folders].map((folder) => {
+      // Get only the last part of the folder path for cleaner titles
+      const folderName = folder.split('/').pop() || folder
+      return [
+        folder,
+        defaultProcessedContent({
+          slug: joinSegments(folder, "index") as FullSlug,
+          frontmatter: {
+            title: `📁 ${folderName}`,
+            tags: [],
+          },
+        }),
+      ]
+    }),
   )
 
   // Update with actual content if available

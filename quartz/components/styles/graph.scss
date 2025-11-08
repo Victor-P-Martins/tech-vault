@@ -3,37 +3,65 @@
 .graph {
   & > h3 {
     font-size: 1rem;
-    margin: 0;
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+    color: var(--dark);
   }
 
   & > .graph-outer {
-    border-radius: 5px;
-    border: 1px solid var(--lightgray);
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 90%, transparent);
     box-sizing: border-box;
-    height: 250px;
-    margin: 0.5em 0;
+    height: 280px;
+    margin: 0;
     position: relative;
     overflow: hidden;
+    background:
+      radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--secondary) 3%, transparent) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, color-mix(in srgb, var(--tertiary) 3%, transparent) 0%, transparent 50%),
+      var(--light);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.1),
+        0 0 0 1px color-mix(in srgb, var(--secondary) 20%, transparent),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
 
     & > .global-graph-icon {
       cursor: pointer;
-      background: none;
-      border: none;
-      color: var(--dark);
-      opacity: 0.5;
-      width: 24px;
-      height: 24px;
+      background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 80%, transparent) 100%);
+      border: 1px solid color-mix(in srgb, var(--lightgray) 120%, transparent);
+      color: var(--secondary);
+      opacity: 0.9;
+      width: 32px;
+      height: 32px;
       position: absolute;
-      padding: 0.2rem;
-      margin: 0.3rem;
+      padding: 0.4rem;
+      margin: 0.5rem;
       top: 0;
       right: 0;
-      border-radius: 4px;
-      background-color: transparent;
-      transition: background-color 0.5s ease;
-      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      z-index: 10;
+      pointer-events: all;
+
+      & > svg {
+        pointer-events: none;
+      }
+
       &:hover {
-        background-color: var(--lightgray);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--highlight) 150%, var(--secondary)) 0%, var(--highlight) 100%);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        transform: scale(1.1);
+        opacity: 1;
+        border-color: var(--secondary);
       }
     }
   }
@@ -45,7 +73,8 @@
     top: 0;
     width: 100vw;
     height: 100%;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(16px);
+    background: rgba(0, 0, 0, 0.5);
     display: none;
     overflow: hidden;
 
@@ -54,20 +83,47 @@
     }
 
     & > .global-graph-container {
-      border: 1px solid var(--lightgray);
-      background-color: var(--light);
-      border-radius: 5px;
+      border: 1px solid color-mix(in srgb, var(--lightgray) 90%, transparent);
+      background: var(--light);
+      border-radius: 20px;
       box-sizing: border-box;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 80vh;
-      width: 80vw;
+      height: 85vh;
+      width: 90vw;
+      max-width: 1400px;
+      max-height: 900px;
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.25),
+        0 0 0 1px color-mix(in srgb, var(--secondary) 20%, transparent),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       @media all and not ($desktop) {
-        width: 90%;
+        width: 95vw;
+        height: 80vh;
+      }
+
+      @media all and ($mobile) {
+        width: 100vw;
+        height: 90vh;
+        border-radius: 16px;
       }
     }
+  }
+}
+
+// Animation for modal entrance
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

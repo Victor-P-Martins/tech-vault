@@ -1,3 +1,437 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ========================================
+// 🎨 TECH VAULT - CUSTOM PREMIUM STYLES
+// ========================================
+
+// Enhanced smooth scrolling
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tertiary) var(--lightgray);
+}
+
+// No transitions during theme change - instant switch for clean look
+html.theme-transitioning * {
+  transition: none !important;
+}
+
+// Custom scrollbar for webkit browsers
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lightgray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+// Background gradient for body
+body {
+  background: linear-gradient(
+    135deg,
+    var(--light) 0%,
+    color-mix(in srgb, var(--light) 95%, var(--lightgray)) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+// Enhanced page container
+.page {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// Premium headings with gradient (only for article content)
+article > h1,
+article > h2,
+article > h3,
+.center > article > h1,
+.center > article > h2,
+.center > article > h3 {
+  background: linear-gradient(135deg, var(--dark) 0%, color-mix(in srgb, var(--dark) 80%, var(--secondary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  // Fix: Links inside headings must show text
+  a {
+    -webkit-text-fill-color: var(--secondary) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
+}
+
+// Fix for list page titles - keep them visible
+.section-li h3 {
+  background: none !important;
+  -webkit-text-fill-color: var(--dark) !important;
+  color: var(--dark);
+}
+
+// Premium styling for tag and folder page titles
+.article-title {
+  font-weight: 800 !important;
+  font-size: 2.5rem !important;
+  margin: 2rem 0 1rem 0 !important;
+
+  // Tag titles (starting with #)
+  &:first-letter {
+    color: var(--tertiary);
+  }
+
+  // Apply gradient only to tag/folder titles
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+
+  // Emoji support (folder icon)
+  span {
+    -webkit-text-fill-color: initial;
+    background: none;
+  }
+}
+
+// Enhanced breadcrumbs for better path display
+.breadcrumbs {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: transparent;
+
+    &:hover {
+      background: var(--highlight);
+      color: var(--tertiary);
+      transform: none;
+    }
+  }
+
+  .crumb-separator {
+    color: var(--lightgray);
+    user-select: none;
+    font-weight: 300;
+  }
+
+  .crumb-current {
+    color: var(--dark);
+    font-weight: 600;
+    padding: 4px 8px;
+    background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 80%, transparent) 100%);
+    border-radius: 6px;
+  }
+}
+
+// Enhanced links with smooth transitions
+a {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &.internal {
+    background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 80%, transparent) 100%);
+    border-radius: 6px;
+    padding: 2px 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--highlight) 150%, var(--secondary)) 0%, var(--highlight) 100%);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+    }
+
+    // Fix for broken links (pages that don't exist yet)
+    &.broken {
+      color: var(--secondary) !important;
+      -webkit-text-fill-color: var(--secondary) !important;
+      -webkit-background-clip: initial !important;
+      background-clip: initial !important;
+      background: none !important;
+      background-color: var(--lightgray) !important;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 0.8;
+        background-color: color-mix(in srgb, var(--lightgray) 120%, var(--secondary)) !important;
+      }
+    }
+  }
+}
+
+// Glass morphism effect for sidebars
+.sidebar {
+  background: color-mix(in srgb, var(--light) 80%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 50%, transparent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Enhanced page title with glow
+.page-title {
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+// Premium code blocks
+pre {
+  background: color-mix(in srgb, var(--lightgray) 90%, var(--light)) !important;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 120%, var(--gray));
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      0 8px 12px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 0 0 1px var(--secondary);
+  }
+}
+
+code {
+  background: color-mix(in srgb, var(--lightgray) 80%, var(--light)) !important;
+  padding: 3px 6px !important;
+  border-radius: 4px;
+  font-weight: 500;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 120%, transparent);
+}
+
+// Enhanced cards and containers
+article {
+  background: color-mix(in srgb, var(--light) 60%, transparent);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 50%, transparent);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-color: color-mix(in srgb, var(--secondary) 30%, var(--lightgray));
+  }
+}
+
+// Floating animation for interactive elements
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+// Premium blockquotes
+blockquote {
+  background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 50%, transparent) 100%);
+  border-left: 4px solid var(--secondary);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-left-width: 6px;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+  }
+}
+
+// Enhanced images
+img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Premium table styling
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  thead {
+    background: linear-gradient(135deg, var(--lightgray) 0%, color-mix(in srgb, var(--lightgray) 90%, var(--light)) 100%);
+  }
+
+  tr {
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--highlight);
+    }
+  }
+}
+
+// Smooth focus states
+*:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Loading animation
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Fade in animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Enhanced selection
+::selection {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+  color: var(--light);
+  -webkit-text-fill-color: var(--light);
+}
+
+// Tag styling
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  a {
+    background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 80%, var(--secondary)) 100%);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
+      color: var(--light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+  }
+}
+
+// ========================================
+// 🔧 GRAPH VIEW MODAL FIX
+// ========================================
+// Force graph modal to escape sidebar constraints and render on full viewport
+// This overrides .graph > .global-graph-outer selector when moved to body
+.global-graph-outer {
+  position: fixed !important;
+  inset: 0 !important; // top: 0, right: 0, bottom: 0, left: 0
+  margin: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(16px) !important;
+  pointer-events: all !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  display: none !important;
+
+  &.active {
+    display: block !important;
+  }
+
+  // Ensure the container inside also has proper stacking and centering
+  & > .global-graph-container {
+    pointer-events: all !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1 !important;
+    border: 1px solid color-mix(in srgb, var(--lightgray) 90%, transparent);
+    background: var(--light);
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 85vh;
+    width: 90vw;
+    max-width: 1400px;
+    max-height: 900px;
+    box-shadow:
+      0 30px 90px rgba(0, 0, 0, 0.25),
+      0 0 0 1px color-mix(in srgb, var(--secondary) 20%, transparent),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+}

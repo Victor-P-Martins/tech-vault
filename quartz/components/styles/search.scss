@@ -8,12 +8,12 @@
   }
 
   & > .search-button {
-    background-color: color-mix(in srgb, var(--lightgray) 60%, var(--light));
-    border: none;
-    border-radius: 4px;
+    background: linear-gradient(135deg, var(--lightgray) 0%, color-mix(in srgb, var(--lightgray) 90%, var(--light)) 100%);
+    border: 1px solid color-mix(in srgb, var(--lightgray) 120%, var(--gray));
+    border-radius: 8px;
     font-family: inherit;
     font-size: inherit;
-    height: 2rem;
+    height: 2.5rem;
     padding: 0;
     display: flex;
     align-items: center;
@@ -22,6 +22,15 @@
     white-space: nowrap;
     width: 100%;
     justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--lightgray) 110%, var(--secondary)) 0%, var(--lightgray) 100%);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+      transform: translateY(-1px);
+      border-color: var(--secondary);
+    }
 
     & > p {
       display: inline;
@@ -52,7 +61,9 @@
     height: 100vh;
     overflow-y: auto;
     display: none;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--light) 40%, transparent);
+    animation: fadeIn 0.2s ease;
 
     &.active {
       display: inline-block;
@@ -70,24 +81,32 @@
 
       & > * {
         width: 100%;
-        border-radius: 7px;
+        border-radius: 12px;
         background: var(--light);
         box-shadow:
-          0 14px 50px rgba(27, 33, 48, 0.12),
-          0 10px 30px rgba(27, 33, 48, 0.16);
+          0 20px 60px rgba(0, 0, 0, 0.15),
+          0 0 0 1px color-mix(in srgb, var(--lightgray) 80%, transparent);
         margin-bottom: 2em;
+        border: 1px solid color-mix(in srgb, var(--lightgray) 70%, transparent);
       }
 
       & > input {
         box-sizing: border-box;
-        padding: 0.5em 1em;
+        padding: 0.75em 1.25em;
         font-family: var(--bodyFont);
         color: var(--dark);
         font-size: 1.1em;
-        border: 1px solid var(--lightgray);
+        border: 2px solid var(--lightgray);
+        transition: all 0.2s ease;
 
         &:focus {
           outline: none;
+          border-color: var(--secondary);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        &::placeholder {
+          color: var(--gray);
         }
       }
 
@@ -147,9 +166,11 @@
         }
 
         & .highlight {
-          background: color-mix(in srgb, var(--tertiary) 60%, rgba(255, 255, 255, 0));
-          border-radius: 5px;
+          background: linear-gradient(135deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 120%, var(--tertiary)) 100%);
+          border-radius: 6px;
           scroll-margin-top: 2rem;
+          padding: 2px 4px;
+          font-weight: 500;
         }
 
         & > .preview-container {
@@ -178,13 +199,14 @@
 
           & .result-card {
             overflow: hidden;
-            padding: 1em;
+            padding: 1.25em;
             cursor: pointer;
-            transition: background 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             border-bottom: 1px solid var(--lightgray);
             width: 100%;
             display: block;
             box-sizing: border-box;
+            border-left: 3px solid transparent;
 
             // normalize card props
             font-family: inherit;
@@ -199,7 +221,9 @@
             &:hover,
             &:focus,
             &.focus {
-              background: var(--lightgray);
+              background: linear-gradient(90deg, var(--highlight) 0%, color-mix(in srgb, var(--highlight) 50%, transparent) 100%);
+              border-left-color: var(--secondary);
+              transform: translateX(4px);
             }
 
             & > h3 {
