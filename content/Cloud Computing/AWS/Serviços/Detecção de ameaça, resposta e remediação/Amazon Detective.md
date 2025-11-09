@@ -7,7 +7,7 @@ O Amazon Detective é um serviço que **agrega e modela logs** (CloudTrail, VPC 
 
 - O serviço coleta automaticamente logs dos seus recursos AWS e usa machine learning, análise estatística e graph theory para construir um conjunto de dados ligado (linked) que permite conduzir investigações de segurança mais rápidas e eficientes.
 
-- **Integrações nativas** com [[Amazon GuardDuty]], [[Amazon Macie]] e [[AWS Security Hub]], além de produtos parceiros, para receber/relacionar _findings_.
+- **Integrações nativas** com [[Amazon GuardDuty]], [[Amazon Macie‬‭]] e [[AWS Security Hub]], além de produtos parceiros, para receber/relacionar _findings_.
 
 - O Amazon Detective pode analisar trilhões de eventos de múltiplas fontes de dados, como VPC Flow Logs, [[Amazon CloudTrail]] e Amazon GuardDuty, e cria automaticamente uma visão unificada e interativa dos seus recursos, usuários e das interações entre eles ao longo do tempo. Isso permite identificar as razões subjacentes dos findings, fazer drill-down em atividades históricas relevantes e determinar rapidamente a root cause de uma preocupação de segurança.
 

@@ -100,7 +100,7 @@
 
 ## Logging e Monitoramento
 
-- [[Amazon Cloud Watch]]
+- [[Amazon CloudWatch]]
 - [[Amazon CloudTrail]]
 - [[Service Logs (VPC, ELB, API Gateway, S3, CloudFront)‬]]
 - [[Amazon Route 53]]
@@ -114,3 +114,80 @@
 
 - [[AWS Artifact]]
 - [[AWS Config]]
+
+## Visão Geral
+### **Domínio 1: Detecção de Ameaças e Resposta a Incidentes**
+**Primeiro domínio** do exame **AWS Certified Security – Specialty** verifica sua preparação sobre o quão bem você é capaz de **detectar, automatizar, verificar, avaliar e remediar** incidentes de segurança na sua infraestrutura AWS. Aproximadamente **14%** das questões do exame real giram em torno desse tópico.
+
+Este domínio vai desafiar seu conhecimento em:
+
+- **Analisar arquiteturas** para identificar requisitos de monitoramento e **fontes de dados** para monitoramento de segurança.
+    
+- **Analisar ambientes e workloads** para determinar requisitos de monitoramento.
+    
+- **Projetar o monitoramento** do ambiente e de workloads com base em **requisitos de negócio e de segurança**.
+    
+- **Configurar ferramentas e scripts automatizados** para realizar **auditorias regulares** (por exemplo, criando **insights personalizados** no **AWS Security Hub**).
+    
+- **Definir métricas e limiares** que gerem alertas.
+    
+- **Analisar** a funcionalidade do serviço, permissões e configurações dos recursos **após um evento** que não forneceu visibilidade ou alertas.
+    
+- **Analisar e corrigir** a configuração de uma **aplicação customizada** que não está reportando suas estatísticas.
+    
+- **Avaliar serviços de logging e monitoramento** quanto ao alinhamento com **requisitos de segurança**.
+    
+- **Configurar logging** para serviços e aplicações.
+    
+- **Identificar requisitos de logging e fontes** para **ingestão de logs**.
+    
+- **Implementar armazenamento de logs** e **gerenciamento de ciclo de vida** de acordo com as **melhores práticas da AWS** e requisitos organizacionais.
+    
+- **Identificar configurações incorretas** e determinar etapas de remediação para **permissões de acesso ausentes** necessárias ao logging (por exemplo, gerenciando permissões de leitura/gravação, permissões de bucket S3, acesso público e **integridade**).
+    
+- **Determinar a causa de logs ausentes** e executar **etapas de remediação**.
+    
+- **Identificar padrões em logs** que indiquem **anomalias** e **ameaças conhecidas**.
+    
+- **Normalizar, fazer parsing e correlacionar logs**.
+    
+
+Observe que este domínio tem o **menor peso** no exame (**14%**), semelhante ao novo **Domínio 6: Management and Security Governance** (**14%**). Portanto, assegure-se de dedicar **tempo suficiente** apenas para compreender os conceitos desta seção.
+
+### **Domínio 2 :** **Monitoramento e Alertas para Eventos de Segurança**
+
+O **segundo domínio** do exame **AWS Certified Security – Specialty** foca nos tópicos relacionados ao **gerenciamento de logging e monitoring** na AWS. Para ser um AWS Security Specialist eficaz, é importante que você compreenda esses conceitos-chave. Aproximadamente **18%** das questões do exame real de Security – Specialty giram em torno de **logging** e **monitoramento** na plataforma AWS.
+
+Esse é o **segundo maior domínio** do exame, empatado com o **Domínio 5: Data Protection**, que também possui **18%** de cobertura. Portanto, você deve dedicar tempo suficiente para aprender os diversos serviços, recursos e conceitos da AWS nessa área de conhecimento.
+
+Este domínio desafiará seu conhecimento em:
+
+- **Analisar arquiteturas** para identificar requisitos de monitoramento e **fontes de dados** para monitoramento de segurança.
+    
+- **Analisar ambientes e workloads** para determinar requisitos de monitoramento.
+    
+- **Projetar o monitoramento** do ambiente e de workloads com base em **requisitos de negócios e de segurança**.
+    
+- **Configurar ferramentas e scripts automatizados** para realizar **auditorias regulares** (por exemplo, criando **insights personalizados** no **AWS Security Hub**).
+    
+- **Definir métricas e limiares** que gerem alertas.
+    
+- **Analisar** a funcionalidade do serviço, permissões e configuração de recursos **após um evento** que não forneceu visibilidade ou alertas.
+    
+- **Analisar e corrigir** a configuração de uma **aplicação customizada** que não está reportando suas estatísticas.
+    
+- **Avaliar serviços de logging e monitoramento** quanto ao alinhamento com **requisitos de segurança**.
+    
+- **Configurar logging** para serviços e aplicações.
+    
+- **Identificar requisitos de logging e fontes** para **ingestão de logs**.
+    
+- **Implementar armazenamento de logs** e **gerenciamento de ciclo de vida** conforme as **melhores práticas da AWS** e requisitos organizacionais.
+    
+- **Identificar configurações incorretas** e determinar etapas de remediação para **permissões de acesso ausentes** necessárias ao logging (por exemplo, gerenciando permissões de leitura/gravação, permissões de bucket S3, acesso público e **integridade**).
+    
+- **Determinar a causa de logs ausentes** e executar **etapas de remediação**.
+    
+- **Identificar padrões em logs** que indiquem **anomalias** e **ameaças conhecidas**.
+    
+- **Normalizar, fazer parsing e correlacionar logs**.

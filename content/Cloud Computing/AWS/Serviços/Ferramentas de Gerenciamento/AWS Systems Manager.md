@@ -13,7 +13,7 @@ O **AWS Systems Manager (SSM)** permite **centralizar dados operacionais** de m�
     
 - Permite **automatizar com segurança** tarefas comuns e repetitivas de operações e gerenciamento de TI em recursos AWS.
     
-- Fornece um **shell interativo e CLI baseados em navegador** para gerenciar instâncias Windows e Linux do EC2, sem a necessidade de abrir portas de entrada, gerenciar chaves SSH ou usar _bastion hosts_. Administradores podem **conceder e revogar acesso** às instâncias em um local central usando **políticas do IAM**.
+- Fornece um **shell interativo e CLI baseados em navegador** para gerenciar instâncias Windows e Linux do [[Elastic Compute Cloud (EC2)]], sem a necessidade de abrir portas de entrada, gerenciar chaves SSH ou usar _bastion hosts_. Administradores podem **conceder e revogar acesso** às instâncias em um local central usando **políticas do IAM**.
     
 - Ajuda a garantir que seu software esteja **atualizado** e atenda às suas **políticas de conformidade**.
     
@@ -46,7 +46,7 @@ O **AWS Systems Manager (SSM)** permite **centralizar dados operacionais** de m�
 
 - Mostram informações detalhadas sobre um **único resource group** selecionado.
     
-- Incluem **chamadas de API recentes** via **CloudTrail**, **alterações de configuração recentes** via **Config**, listagens de **inventário de software** de instâncias, **visões de conformidade de patches** de instâncias e **visões de conformidade de configuração** de instâncias.
+- Incluem **chamadas de API recentes** via **[[AWS CloudTrail]]**, **alterações de configuração recentes** via **Config**, listagens de **inventário de software** de instâncias, **visões de conformidade de patches** de instâncias e **visões de conformidade de configuração** de instâncias.
 
 ### System Manager Activation
 
@@ -62,7 +62,7 @@ O **AWS Systems Manager (SSM)** permite **centralizar dados operacionais** de m�
 
 - Analisa sua frota de instâncias gerenciadas quanto à **conformidade de patches** e **inconsistências de configuração**.
     
-- Veja **histórico de conformidade** e **rastreamento de alterações** para dados de _patching_ do **Patch Manager** e associações do **State Manager** usando o **AWS Config**.
+- Veja **histórico de conformidade** e **rastreamento de alterações** para dados de _patching_ do **Patch Manager** e associações do **State Manager** usando o [[AWS Config]].
     
 - **Customize** o Systems Manager Compliance para **criar seus próprios tipos de conformidade**.
 
