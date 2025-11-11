@@ -1,4 +1,5 @@
 #logging
+
 **Ferramenta de monitoramento** para seus recursos e aplicações na AWS.  
 Exibe **métricas** e cria **alarmes** que observam essas métricas e enviam notificações ou fazem alterações automaticamente nos recursos monitorados quando um **limiar** é violado. 
 
@@ -245,7 +246,7 @@ Você pode usar **CloudWatch Evidently** para **testar features** com uma parcel
 Permite criar um **stream contínuo, quase em tempo real** de métricas para um **destino à sua escolha**.
 
 - Envie métricas para **Datadog, New Relic, Splunk, Dynatrace, Sumo Logic** e **S3**.
-    
+
 
 ---
 
@@ -265,24 +266,24 @@ Ajuda a configurar os **melhores monitores** para analisar continuamente sinais 
 **Retenção de dados:**
 
 - **Problems** por **55 dias** e **observations** por **60 dias**.
-    
+
 
 **Recursos:**
 
 - Dashboards automáticos que mostram **problemas potenciais**, ajudando a isolar rapidamente.
-    
+
 - Recomenda e configura métricas e logs no CloudWatch ao adicionar aplicações.
-    
+
 - Analisa padrões históricos para **detectar anomalias** e identifica **erros/exceções** em logs da aplicação, SO e infraestrutura.
-    
+
 - **Correlaciona** observações com algoritmos e regras embutidas.
-    
+
 - Cria dashboards com observações relevantes e **severidade**, priorizando ações.
-    
+
 - Para problemas comuns em **.NET** e **SQL** (latência, falha de backup, _memory leaks_, grandes requisições HTTP, I/O cancelado), fornece **insights** com possível causa raiz e **passos de resolução**.
-    
+
 - Integração nativa com [[AWS Systems Manager]] OpsCenter para resolver executando **Automation documents**.
-    
+
 
 ---
 
@@ -291,90 +292,250 @@ Ajuda a configurar os **melhores monitores** para analisar continuamente sinais 
 **Coleta e agregação**
 
 - Coleta, agrega e resume **métricas e logs** de aplicações **containerizadas** e **microservices**.
-    
+
 - Disponível para [[Amazon ECS]], [[Amazon EKS]] e **Kubernetes** no **EC2**.
 
 - Suporta clusters em [[AWS Fargate]] (ECS e EKS).
-    
+
 
 **Informações de diagnóstico**
 
 - Fornece dados como **falhas de reinício** de containers para isolar e resolver rapidamente.
-    
+
 - Permite definir **alarmes** nas métricas coletadas.
-    
+
 
 **Métricas e logs**
 
 - Coleta dados como **eventos de log de performance** usando **embedded metric format**.
-    
+
 - Métricas ficam disponíveis em **dashboards automáticos** do CloudWatch.
-    
+
 - Cria automaticamente um **log group** para esses eventos.
-    
+
 
 **Cobrança**
 
 - Versão original: métricas cobradas como **custom metrics**.
-    
+
 - **Enhanced observability para EKS:** cobrança **por observação**, não por métrica armazenada ou log ingerido.
-    
+
 
 **Coleta de performance**
 
 - Em **EKS/Kubernetes**, usa uma versão **containerizada do CloudWatch Agent** para descobrir containers em execução e coletar dados **em todas as camadas** da pilha de performance.
-    
+
 
 **Criptografia**
 
 - Suporta **KMS** para logs e métricas coletados (apenas **chaves simétricas**).
-    
+
 
 ---
 
 ## Autenticação e Controle de Acesso
 
 - Use **IAM users/roles** para autenticação.
-    
+
 - Gerencie acesso com **Dashboard Permissions**, **políticas IAM (identity-based)** e **service-linked roles**.
-    
+
 - **Identity-Based Policies** e **Resource-Based Policies**.
-    
+
 - **Não há ARNs** de CloudWatch para usar diretamente em políticas IAM (para ações do CloudWatch). Use **`*` (asterisco)** como **resource** ao escrever políticas que controlem ações do CloudWatch.
+
+---
+## Políticas Gerenciadas do Amazon CloudWatch
+
+Uma **managed policy** é uma política **criada e predefinida pela AWS** para diferentes serviços. Esse tipo de política é voltado a **casos de uso comuns**, para que você **não precise escrever do zero**. Você **não pode modificar** as declarações dentro de uma managed policy. Se as managed policies **não atenderem** às demandas da sua aplicação, você pode criar uma **customer-managed policy** (que você mesmo administra e escreve).
+
+O Amazon CloudWatch possui várias managed policies, mas você **não precisa saber todas**. Abaixo estão as mais relevantes para o exame [[AWS Security Specialty - SCS-C02]]:
+
+## Tipos
+
+- **CloudWatchFullAccess** — Permite o uso de **todas** as operações do CloudWatch. Deve ser concedida **apenas a administradores**. **Não é ideal** se você estiver implementando **privilégio mínimo** em produção.
+    
+- **CloudWatchReadOnlyAccess** — Permite **operações de leitura** apenas, como **obter métricas** ou **listar detalhes** de um dashboard. Qualquer operação que **não modifique** configurações ou dados se enquadra nesta política.
+    
+- **CloudWatchActionsEC2Access** — Concede **acesso somente leitura** a **CloudWatch alarms** e **métricas**. Também permite **visualizar metadados do EC2** e **executar** ações em instâncias EC2: **stop**, **reboot** e **terminate**.
+
+---
+
+## Logging em tempo real com[[ Amazon Data Firehose]] e [[Amazon OpenSearch]] Service
+
+**Amazon Data Firehose** é um serviço totalmente gerenciado que permite **carregar dados de streaming** em **data stores** e **ferramentas de análise**. Ele pode **agrupar (batch)**, **comprimir** e **transformar** os dados antes de enviá-los ao destino.
+
+## Segurança (Data Firehose)
+
+- Oferece opção de **criptografar automaticamente** seus dados após o upload no destino.
+    
+- **Gerencie acesso a recursos** com **IAM**.
+    
+
+**Amazon OpenSearch Service** permite **pesquisar, analisar e visualizar** seus dados em **tempo real**. O serviço gerencia **capacidade, escalabilidade, patching e administração** dos seus **clusters OpenSearch**, mantendo **acesso direto às APIs** do OpenSearch.
+
+## Segurança (OpenSearch Service)
+
+- **Elegível para HIPAA** e **conforme** com **PCI DSS**, **NOC** e **padrões ISO**.
+    
+- Conecte aplicações com segurança ao ambiente gerenciado via **VPC** ou **Internet pública**, configurando acesso de rede com **Security Groups** da VPC ou **políticas por IP**.
+    
+- **Autentique usuários** e **controle acesso** com **Amazon Cognito** e **AWS IAM**.
+    
+- **Criptografia** embutida **em repouso** e **em trânsito**, protegendo dados no **domínio** (e snapshots) e entre **nós** do cluster.
+    
+
+Logs de servidor web, como **Apache**, geram dados **não estruturados (raw)**, dificultando a extração de informações valiosas. Frequentemente, esses logs **schemaless** precisam ser **convertidos** para um formato **estruturado** (ex.: **JSON**, **CSV**) para **melhor indexação e busca**, essenciais à **análise de logs**.
+
+Se você precisa de **logging em tempo real**, **Amazon Data Firehose** e **Amazon OpenSearch** são uma ótima combinação. Ambos são **totalmente gerenciados**, ou seja, a AWS **abstrai as tarefas operacionais** de servidor, permitindo que você **foque** no que é necessário para sua aplicação.
+
+A arquitetura abaixo ilustra o **fluxo de dados** do **Amazon Data Firehose** até o **OpenSearch**.
+![[Pasted image 20251109170020.png]]
+
+Uma **fonte de dados** pode ser um **servidor web**, **dispositivo móvel** ou **dispositivo IoT**. A fonte **envia continuamente logs não estruturados** para o **Amazon Data Firehose**. Os logs ingeridos pelo Firehose são **processados e transformados** para um formato **estruturado** (ex.: **JSON**, **CSV**) por uma **AWS Lambda Function**. Após a **transformação bem-sucedida**, o **novo log estruturado** é **entregue ao OpenSearch**. Se algo der errado no processo de entrega, o **Amazon Data Firehose** enviará os dados para um **bucket S3 de backup** para **evitar perda de dados**.
+
+---
+## Service logs (VPC, ELB, API Gateway, S3, CloudFront)
+
+Um conjunto de **recursos de log de serviços** da AWS que capturam tráfego e requisições em camadas de rede e aplicação, permitindo auditoria, troubleshooting, métricas e detecção de anomalias. Inclui **VPC Flow Logs**, **ELB/ALB logs**, **API Gateway execution/access logs**, **S3 server access & CloudTrail data events**, e **CloudFront standard & real-time logs**.
+
+---
+
+#### VPC Flow Logs
+
+- **O que são**: capturam informações sobre o tráfego IP que entra/sai de **ENIs** em **VPC/Subnets/ENIs**.
+- **Destino**: **CloudWatch Logs**, **S3** ou **Kinesis Data Firehose** (_delivery path/“subscription”_).
+- **Formato/Exemplos**: registros agregados por intervalo com campos como `srcaddr`, `dstaddr`, `action`, `bytes` e marcadores como `NODATA`.
+- **Automação**: habilitação em larga escala via **SSM Automation** (`AWSSupport-EnableVPCFlowLogs`).
+- **Consulta**: query direta no **Athena** quando salvos em S3 (GZIP).
+
+---
+
+#### Elastic Load Balancing (ALB/CLB/NLB)
+
+- **Access logs (ALB/CLB)**: detalham **hora, IP do cliente, latências, path, status, backend**; úteis para análise de tráfego e troubleshooting. **Gravação em S3** (requer bucket policy permitindo ELB escrever).
+- **Connection logs (ALB)**: capturam **protocolo/cipher TLS, latência de handshake, status de conexão, detalhes de certificado do cliente**; ajudam a depurar **TLS/mTLS**.
+- **Gateway Load Balancer**: recomenda uso de **VPC Flow Logs** nos ENIs do GWLB para visibilidade de tráfego.
+
+---
+
+#### Amazon API Gateway
+
+- **Tipos de logs (REST APIs)**:
+    - **Execution logging**: gerenciado pelo API Gateway, cria **CloudWatch Log Groups/Streams** e registra **requisições e respostas** da API.
+    - **Access logging**: formato customizável por estágio, focado em **acessos** (método, path, status, latências, IP).
+- **HTTP APIs**: criar **CloudWatch Log Group**, informar **ARN** e habilitar **access logging** no console/CLI.
+- **Visualização**: logs acessíveis no **CloudWatch Console**.
+
+---
+
+#### Amazon S3
+
+- **Opções de logging**:
+    - **Server access logging**: registros detalhados de **requisições ao bucket** (úteis para auditoria, análise de uso, billing).
+    - **CloudTrail logging**: **bucket-level** e **object-level (data events)** para rastrear **chamadas da API S3** (quem fez o quê/quando). **Recomendado** para ações no S3; _data events_ trazem mais contexto que server access.
+
+---
+
+#### Amazon CloudFront
+
+- **Standard logs**: arquivos **W3C-like** com **33 campos** (ex.: `date`, `time`, `c-ip`, `cs(Host)`, `sc-status`, `sc-bytes`), entregues em **S3** (quase em tempo real).
+- **Real-time logs**: entrega **em tempo real** para **Kinesis Data Streams** (seleção de **campos**, suporte a **CMCD**); **custos adicionais** além de Kinesis. Pode encadear com **Firehose** para S3/Redshift/OpenSearch.
+
+---
+
+#### Boas Práticas e Considerações
+
+- **Destino adequado**: use **S3** para retenção barata e integração com **Athena/Glue**; use **CloudWatch Logs** para **alertas** e **pesquisa rápida**.
+- **Permissões**: buckets de logs precisam de **bucket policy** permitindo escrita pelo serviço (ex.: ELB).
+- **Custos**:
+    - **VPC Flow Logs**: cobrança por **ingestão/armazenamento** em destino (CW Logs/S3).
+    - **ELB Access/Connection logs**: sem custo do serviço, mas há **armazenamento/requests** do S3.
+    - **API Gateway**: **CloudWatch Logs** cobrado por ingestão/armazenamento/queries.
+    - **S3**: **server access logs** geram **requests adicionais** e ocupam **storage**; **CloudTrail data events** têm **cobrança por evento**.
+    - **CloudFront**: **standard logs (S3)** cobram apenas S3; **real-time logs** têm **custo CloudFront** + **Kinesis**.
+- **Escopo/limitações**: **DNS logs** do GuardDuty exigem uso do **resolver AWS**; para **CloudFront**, logs são **por distribuição** e **em UTC**. **API Gateway** REST vs HTTP tem **configurações de logging** distintas.
+
+---
+
+#### Casos de Uso
+
+- **Segurança e Forense**: correlacionar **VPC Flow Logs** + **ALB Connection Logs** para investigar problemas de **TLS** e **origem de tráfego**; **S3 data events** para trilha de auditoria de objetos sensíveis.
+- **Observabilidade de API**: **API Gateway access logs** para **latência por rota** e códigos de resposta; acione **métricas/alertas** no CloudWatch.
+- **Análise quase em tempo real**: **CloudFront real-time logs → Kinesis → Firehose** para **S3/Redshift/OpenSearch** e criação de **dashboards** de performance/abuso.
+
+---
+## Preços do Amazon CloudWatch
+
+- Cobrança pelo **número de métricas/mês**.
+
+- Cobrança por **1.000 chamadas de API** do CloudWatch.
+
+- Cobrança por **dashboard/mês**.
+
+- Cobrança por **alarme por métrica** (Standard e High Resolution).
+
+- Cobrança por **GB de logs** coletados, arquivados e analisados.
+
+- **Sem cobrança de Data Transfer IN**, apenas **Data Transfer Out**.
+
+- Cobrança por **milhão de eventos personalizados** e por **milhão de eventos cross-account**.
+
+- Cobrança por **rule** e por **log events** que dão _match_ com sua regra.
+
+- **Evidently**: cobrança por **1 milhão de eventos**.
+
+- **RUM**: cobrança por **100k eventos**.
+
+- **Logs Insights**: cobrado **por query**, com base na **quantidade de dados ingeridos** escaneados pela consulta.
+
+## **Troubleshooting (Solução de Problemas)**
+
+- Se sua instância **EC2** não estiver enviando ou parar de enviar **logs**, acesse essa instância e verifique se o **agent** ainda está em execução.
+
+- Por padrão, o **CloudWatch agent** envia dados para o **CloudWatch Logs** pela **Internet pública**. Ao usar o CloudWatch agent, verifique se sua instância **EC2** tem **rota** para o **Internet Gateway/NAT Gateway**.
+
+- Garanta que as **permissões IAM** usadas pelo **CloudWatch Logs agent** permitam **enviar eventos de log** (_put log events_) e **criar log groups e log streams** no **CloudWatch**.
+
+- Se você não vir **CloudWatch logs** após executar uma **Lambda Function**, confirme que a **execution role** dela tem permissão para **gravar dados de log** no **CloudWatch Logs**.
+
+### Misconfiguration
+
+- Abra o arquivo de log do **awslogs** em **/var/log/awslogs.log**. Verifique os seguintes erros:
+    
+    - **NocredentialsError**
+        
+        - Certifique-se de **anexar uma IAM role** à sua instância EC2.
+            
+        - Como alternativa, atualize as **credenciais do usuário IAM** no arquivo **/etc/awslogs/awscli.conf**.
+            
+    - **AccessDeniedError**
+        
+        - Garanta que você tenha as **permissões corretas** para o **CloudWatch Logs**.
+            
+- Verifique se as **regras de rotação de logs do seu SO** são suportadas.
+    
+- Verifique **duplicidades** na seção logstream do **arquivo de configuração do agente**.
     
 
 ---
 
-## Preços do Amazon CloudWatch
+### Insufficient Permissions
 
-- Cobrança pelo **número de métricas/mês**.
+- Verifique se a **IAM role da instância** possui as permissões necessárias:
     
-- Cobrança por **1.000 chamadas de API** do CloudWatch.
-    
-- Cobrança por **dashboard/mês**.
-    
-- Cobrança por **alarme por métrica** (Standard e High Resolution).
-    
-- Cobrança por **GB de logs** coletados, arquivados e analisados.
-    
-- **Sem cobrança de Data Transfer IN**, apenas **Data Transfer Out**.
-    
-- Cobrança por **milhão de eventos personalizados** e por **milhão de eventos cross-account**.
-    
-- Cobrança por **rule** e por **log events** que dão _match_ com sua regra.
-    
-- **Evidently**: cobrança por **1 milhão de eventos**.
-    
-- **RUM**: cobrança por **100k eventos**.
-    
-- **Logs Insights**: cobrado **por query**, com base na **quantidade de dados ingeridos** escaneados pela consulta.
+    - **logs:CreateLogGroup** – cria um **log group** que contém o **log stream**.
+        
+    - **logs:CreateLogStream** – cria um **log stream** (a **sequência de eventos de log** gerados por um recurso).
+        
+    - **logs:PutLogEvents** – envia (**upload**) um **lote de eventos de log** para o log stream.
+        
+    - **logs:DescribeLogStreams** – lista **todos os log streams** de um **log group** específico.
+        
 
-**Troubleshooting (Solução de Problemas)**
+---
 
-- Se sua instância **EC2** não estiver enviando ou parar de enviar **logs**, acesse essa instância e verifique se o **agent** ainda está em execução.
-    
-- Por padrão, o **CloudWatch agent** envia dados para o **CloudWatch Logs** pela **Internet pública**. Ao usar o CloudWatch agent, verifique se sua instância **EC2** tem **rota** para o **Internet Gateway/NAT Gateway**.
-    
-- Garanta que as **permissões IAM** usadas pelo **CloudWatch Logs agent** permitam **enviar eventos de log** (_put log events_) e **criar log groups e log streams** no **CloudWatch**.
-    
-- Se você não vir **CloudWatch logs** após executar uma **Lambda Function**, confirme que a **execution role** dela tem permissão para **gravar dados de log** no **CloudWatch Logs**.
+### Connection Problems
+
+- Verifique a configuração do seu **security group** e da **network ACL** e confirme se há **acesso à Internet pública**.
+
+> [[AWS Security Specialty - SCS-C02]]: Ao fazer a prova, a maioria questões de **(troubleshooting)** que você encontrará envolve três coisas: **configuração incorreta**, **permissões insuficientes** e **problemas de conexão**. Portanto, mesmo que você não consiga identificar exatamente a resposta de um item, ainda poderá eliminar algumas alternativas  se lembrar desses três pontos.
